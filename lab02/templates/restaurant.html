@@ -10,13 +10,36 @@
 <body>
     {% include 'includes/header.html' %}
 
-    <main>
-        <p>Search location: {{city}}</p>
-        <p>Search term: {{search_term or 'None Specified'}}</p>
-        <p>Data: {{ restaurant }}</p>
-        <h2>Top Restaurant:</h2> 
-        <p>Name: {{ restaurant.get('name') }}</p>
+    <p class="search-term">Search term: {{search_term or 'None Specified'}}</p>
+
+<div class="search">
+    {% for restaurant in restaurants %}
+
+
+    <main>    
+        
+        <p class="restaurant-name"> {{ restaurant.get('name') }}</p>
+
+        <img src="{{restaurant.get('image_url') }}" />
+
+        <p class="restaurant_location"> {{ restaurant.get('display_address') }} </p>
+
+       
+        
+        <table>
+            <tr>
+                
+                <td> {{ restaurant.get('rating') }} stars from {{restaurant.get('review_count')}} reviews </td>
+            </tr>
+        </table>
+    
     </main>
+
+
+
+    {% endfor %}
+</div>
+
 </body>
 </html>
 
