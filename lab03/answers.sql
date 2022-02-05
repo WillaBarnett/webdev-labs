@@ -135,3 +135,7 @@ UPDATE users
 SET email = 'cyoung2022@gmail.com'
 WHERE id=26;
 
+
+
+
+-- Exercise 14
